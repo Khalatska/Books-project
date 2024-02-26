@@ -1,4 +1,17 @@
  
 @import url('./reset.css');
+@import url('./header.css');
  
  
+ body {
+  font-family: "DM Sans", sans-serif;
+ }
+
+
+ :root {
+	--black: #111;
+	--black-1: #202024;
+	--violet: #4f2ee8;
+	--yellow: #eac645;
+	--white: #fff;
+}
