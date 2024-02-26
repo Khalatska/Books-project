@@ -8,7 +8,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #4f2ee8;
+    background-color: #fff;
+    border: 1.50px solid #111;
+    border-radius: 0 0 8px 8px;
 }
  
 .header-link {
@@ -17,12 +19,10 @@
     justify-content: center;
     gap: 8px;
 }
- 
-
-
-
-
-
+.icon-burger{
+    stroke: #111111;
+    margin-left: 11px;
+}
 
 /*------------------------Checkbox----------------------------*/
 .checkbox{
@@ -55,4 +55,89 @@ box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
 
 .checkbox:checked::before{
     left: 21px;
+}
+
+
+/*------------------------MobileMenu----------------------------*/
+
+
+
+.mob-menu {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0 10px 10px 0 rgba(245, 245, 247, 0.1);
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, rgb(79, 46, 232) 18.02733987569809%, rgb(255, 255, 255) 100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.background-img-mob{
+    position: fixed;
+    z-index: -10;
+    right: 50%;
+    transform: translate(50%);
+
+}
+
+.is-visible{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.mob-nav {
+}
+ 
+.mob-list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 183px;
+}
+
+.mob-item-home{
+    background: #eac645;
+    border-radius: 36px;
+    padding: 8px 16px;
+    width: 72px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.mob-link-home {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111;
+
+}
+
+.mob-item-shop{
+    
+}
+
+.mob-link-shop {
+font-weight: 500;
+font-size: 14px;
+line-height: 1.28571;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.icon-shopping{
+    fill: #fff;
+    margin-left: 4px;
 }
