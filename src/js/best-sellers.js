@@ -30,7 +30,7 @@ function createBooksCard (category){
 
 function createBookCard ({book_image, title, _id, author}){
     return ` <li class="best-book-item">
-    <img src="${book_image}" alt="${title}" data-id="${_id}" class="best-book-img"/>
+    <img src="${book_image}" alt="${title}" data-id="${_id}" class="best-book-img" width="375" height="485"/>
     <h2 class="best-book-title">${sliceTitle(16, title)}</h2>
     <p class="best-book-author">${author}</p>
     </li>
