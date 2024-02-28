@@ -6,7 +6,7 @@ import{a as i}from"./assets/vendor-0cb09735.js";(function(){const t=document.cre
     <ul class="best-book-list">${t}</ul>
     <button type="button" class="btn-see-more">See more</button>
     </li>`}function b({book_image:s,title:t,_id:r,author:n}){return` <li class="best-book-item">
-    <img src="${s}" alt="${t}" data-id="${r}" class="best-book-img"/>
+    <img src="${s}" alt="${t}" data-id="${r}" class="best-book-img" width="375" height="485"/>
     <h2 class="best-book-title">${f(16,t)}</h2>
     <p class="best-book-author">${n}</p>
     </li>
