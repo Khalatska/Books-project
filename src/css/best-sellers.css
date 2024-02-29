@@ -71,7 +71,7 @@ margin-left: auto;
      gap: 40px;
 }
 
-.best-book-list:not(:first-child){
+.best-book-item:not(:first-child){
     display: none;
 }
 
