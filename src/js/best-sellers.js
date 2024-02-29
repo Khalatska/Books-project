@@ -1,4 +1,5 @@
-import {getTopBooks} from './API'
+import {getTopBooks} from './API';
+import {getBooksByCategory} from './API';
 
 const bestBooksContainer = document.querySelector('.best-books-container');
 
@@ -15,14 +16,19 @@ export async function renderBestBooks(){
             const markup = createBooksCard(book);
             bestBooksList.insertAdjacentHTML('beforeend', markup);
         })
+        const btnSeeMore = document.querySelectorAll('.btn-see-more');
+        btnSeeMore.forEach(btn => {
+            btn.addEventListener('click', handleSeeMore);
+        })
 }
 
+ 
 function createBooksCard (category){
     const bookItem = category.books.map(book => createBookCard(book)).join('');
     return `<li class="best-category">
     <p class="best-category-name">${category.list_name}</p>
     <ul class="best-book-list">${bookItem}</ul>
-    <button type="button" class="btn-see-more">See more</button>
+    <button value="${category.list_name}" type="button" class="btn-see-more">See more</button>
     </li>`
 }
 
@@ -45,4 +51,32 @@ function sliceTitle(length, title){
     }
 }
 
+
  
+async function handleSeeMore(e){
+    e.preventDefault();
+    const books = await getBooksByCategory(e.target.value);
+    const targetTitle = changeColor(e.target.value);
+    const markupBooks = books.map(book => {
+        return `
+        <h2 class="selected-category-title">${targetTitle}</h2>
+        <ul class="book-list-category">${createBookCard(book)}</ul>`
+    });
+    bestBooksContainer.innerHTML = '';
+    bestBooksContainer.insertAdjacentHTML('afterbegin', markupBooks);
+    window.scrollTo({top: 0, behavior:'smooth'});
+    const categoriesItems = document.querySelectorAll('.item-categories');
+    categoriesItems.forEach(item =>{
+        item.textContent === e.target.value ? item.classList.add('active') : item.classList.remove('active');
+    })
+    }
+    
+    function changeColor(name){
+        const splitName = name.split(' ');
+        const lastWord = splitName[splitName.length - 1];
+        const withoutLastWord = splitName.slice(0, -1);
+        const firstWords = withoutLastWord.join(' ');
+    
+     return `${firstWords} <span class="accent-books">${lastWord}</span>`
+    }
+    

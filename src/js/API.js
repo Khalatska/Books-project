@@ -13,7 +13,7 @@ export async function getTopBooks(){
 }
 
 export async function getBooksByCategory (category){
-    const res = await axios.get(`/category?category=${selectedCategory}`);
+    const res = await axios.get(`/category?category=${category}`);
     return res.data;
 }
 
