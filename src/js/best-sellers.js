@@ -4,7 +4,7 @@ const bestBooksContainer = document.querySelector('.best-books-container');
 
 renderBestBooks();
 
-async function renderBestBooks(){
+export async function renderBestBooks(){
     bestBooksContainer.insertAdjacentHTML('afterbegin', `
     <h1 class="best-sellers-title">Best Sellers <span class="accent-books">Books</span></h1>
     <ul class="best-sellers-books"></ul>
