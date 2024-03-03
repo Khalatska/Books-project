@@ -1,9 +1,11 @@
 import {getTopBooks} from './API';
 import {getBooksByCategory} from './API';
+import { onClickGalleryImg } from './modal-window';
 
 const bestBooksContainer = document.querySelector('.best-books-container');
 
 renderBestBooks();
+addListenerToCards();
 
 export async function renderBestBooks(){
     bestBooksContainer.insertAdjacentHTML('afterbegin', `
@@ -62,8 +64,10 @@ async function handleSeeMore(e){
         <h2 class="selected-category-title">${targetTitle}</h2>
         <ul class="book-list-category">${createBookCard(book)}</ul>`
     });
+
     bestBooksContainer.innerHTML = '';
     bestBooksContainer.insertAdjacentHTML('afterbegin', markupBooks);
+    addListenerToCards();
     window.scrollTo({top: 0, behavior:'smooth'});
     const categoriesItems = document.querySelectorAll('.item-categories');
     categoriesItems.forEach(item =>{
@@ -80,3 +84,19 @@ async function handleSeeMore(e){
      return `${firstWords} <span class="accent-books">${lastWord}</span>`
     }
     
+
+
+
+// function addListenerToCards (){
+//     const galleryImg = document.querySelectorAll('.best-book-img');
+//     galleryImg.forEach( img => {img.addEventListener('click', onClickGalleryImg)});
+
+// }
+
+function addListenerToCards() {
+    bestBooksContainer.addEventListener('click', function (event) {
+        if (event.target.classList.contains('best-book-img')) {
+            onClickGalleryImg(event);
+        }
+    });
+}

@@ -1,6 +1,7 @@
 import {getCategoriesBooks} from './API';
 import {getBooksByCategory} from './API'
 import {renderBestBooks} from './best-sellers'
+import { onClickGalleryImg } from './modal-window';
 const listCategories = document.querySelector('.list-categories');
 
 //Відмалювали категорії
@@ -44,10 +45,14 @@ function categoryTemplate ({list_name}){
     bestBooksContainer.insertAdjacentHTML('afterbegin', `
     <h2 class="selected-category-title"> <span class="selected-category-accent"></span></h2>
     <ul class="book-list-category"></ul>`);
-
+ 
+    const bookListCategory = document.querySelector('.book-list-category');
+    bookListCategory.addEventListener('click', onClickGalleryImg);
 
   if(event.target && event.target.matches('li.item-categories')){
     let category = event.target.textContent;
+    displayBooks(category);
+
    const allCategoriesItems = document.querySelectorAll('.item-categories');
    allCategoriesItems.forEach(category =>{
     category.classList.remove('active')
@@ -57,7 +62,6 @@ function categoryTemplate ({list_name}){
         renderBestBooks();
         return;
     }
-    displayBooks(category);
   }
  });
 
