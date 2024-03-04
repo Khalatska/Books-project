@@ -3,7 +3,7 @@ import {getBookById} from './API'
 import * as basicLightbox from 'basiclightbox'
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-import amazon from '../img/amazon.png';
+import amazon from '../img/amazon1.png';
 import apple from '../img/apple-books.png';
 import noble from '../img/barnes-and-noble.png';
 import booksMillion from '../img/books-a-million.png';
@@ -30,9 +30,36 @@ createModalWindow(data);
 const addBtn = document.querySelector('.addBtn');
 addBtn.addEventListener('click', refreshLS(data));
 
+if(addedBooks.length > 0){
+    const isBookAdded = addedBooks.some( book => id === book._id);
+    if(isBookAdded){
+        addBtn.textContent = 'Remove from the shopping list';
+        addBtn.classList.add('mobileWidth')
+    } else { addBtn.textContent = 'Add to shopping list'}
+}
+
 }
 
 
+const refreshLS = data => e => {
+    e.preventDefault();
+    if(e.target.textContent === 'Remove from the shopping list'){
+        e.target.textContent = 'Add to shopping list';
+        e.target.classList.remove('mobileWidth');
+    
+        const indexToRemove = addedBooks.findIndex(book => book._id === data._id);
+        addedBooks.splice(indexToRemove, 1);
+        removeCongratulation();
+        // removeBookMessage();
+    } else {
+        e.target.textContent = 'Remove from the shopping list';
+        e.target.classList.add('mobileWidth');
+        addedBooks.push(data);
+        addCongratulation();
+        // addBookMessage();
+    } 
+    localStorage.setItem(localeStorageKey, JSON.stringify(addedBooks))
+    };
 
 
 function loadFromLs (key){
@@ -47,26 +74,6 @@ function loadFromLs (key){
 }
 
 
-const refreshLS = data => e => {
-e.preventDefault();
-if(e.target.textContent === 'Remove from the shopping list'){
-    e.target.textContent = 'Add to shopping list';
-    // e.target.classList.remove('mobileWidth');
-
-    const indexToRemove = addedBooks.findIndex(book => book._id === data._id);
-    addedBooks.splice(indexToRemove, 1);
-    // removeCongratulation();
-    // removeBookMessage();
-} else {
-    e.target.textContent = 'Remove from the shopping list';
-    // e.target.classList.add('mobileWidth');
-    addedBooks.push(data);
-    // addCongratulation();
-    // addBookMessage();
-} 
-localStorage.setItem(localeStorageKey, JSON.stringify(addedBooks))
-};
-
 
 
 function createModalWindow ({book_image,  title, author, description, buy_links,}){
@@ -74,27 +81,35 @@ function createModalWindow ({book_image,  title, author, description, buy_links,
     if(description === ''){ description = 'Book description has not been added yet...'};
 
     const instance = basicLightbox.create(
-` <button type="button" class="closeModalBtn">
+`<div class="modal"> 
+ <button type="button" class="modal-close-btn">
 <svg>
-<use href="../img/sprite.svg#icon-x-close"></use>
+<use href="../img/sprite.svg#icon-x-close" class="modal-close-icon"></use>
 </svg>
 </button>
-<img src=""${book_image} alt="${title}" class="img-modal"/>
+<div class="img-container">
+<div class="img-top-container"> 
+<img src="${book_image}" alt="${title}" class="img-modal"/>
+</div>
+<div class="img-bottom-container">
 <h2 class="title-modal">${title}</h2>
 <p class="author-modal">${author}</p>
 <p class="description-modal">${description}</p>
 <ul class="buy-links-container"></ul>
+</div>
+</div>
 <button class="addBtn" type="submit">Add to shopping list</button>
+</div>
 `, {
      onShow: instance => {
-        // document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
 
-        const closeBtn = instance.element().querySelector('.closeModalBtn');
+        const closeBtn = instance.element().querySelector('.modal-close-btn');
         closeBtn.onclick = () => instance.close();
      }
      ,
      onClose: instance => {
-        // document.body.style.overflow = 'visible';
+        document.body.style.overflow = 'visible';
      }
     }
     );
@@ -147,6 +162,7 @@ switch(link.name) {
     case 'Apple Books':
         linkShop.href = link.url;
         imgShop.src = apple;
+        imgShop.className = 'booksIconApple';
         break;
     case 'Barnes and Noble':
         linkShop.href = link.url;
@@ -166,4 +182,17 @@ switch(link.name) {
         break;
 }
 })
+}
+
+function addCongratulation(){
+    const modalElem = document.querySelector('.modal');
+   const congratulation = document.createElement('p');
+   congratulation.className = 'congratulation';
+   congratulation.textContent = 'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+   modalElem.appendChild(congratulation);
+}
+
+function removeCongratulation(){
+    const congratulation = document.querySelector('.congratulation');
+    if(congratulation) congratulation.remove();
 }
