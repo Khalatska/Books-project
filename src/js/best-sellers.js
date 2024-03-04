@@ -59,14 +59,12 @@ async function handleSeeMore(e){
     e.preventDefault();
     const books = await getBooksByCategory(e.target.value);
     const targetTitle = changeColor(e.target.value);
-    const markupBooks = books.map(book => {
-        return `
-        <h2 class="selected-category-title">${targetTitle}</h2>
-        <ul class="book-list-category">${createBookCard(book)}</ul>`
-    });
+    const markupBooks = books.map(book => createBookCard(book)).join('');
 
-    bestBooksContainer.innerHTML = '';
-    bestBooksContainer.insertAdjacentHTML('afterbegin', markupBooks);
+    bestBooksContainer.innerHTML = `
+        <h2 class="selected-category-title">${targetTitle}</h2>
+        <ul class="book-list-category">${markupBooks}</ul>
+    `;
     addListenerToCards();
     window.scrollTo({top: 0, behavior:'smooth'});
     const categoriesItems = document.querySelectorAll('.item-categories');
