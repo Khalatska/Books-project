@@ -83,8 +83,8 @@ function createModalWindow ({book_image,  title, author, description, buy_links,
     const instance = basicLightbox.create(
 `<div class="modal"> 
  <button type="button" class="modal-close-btn">
-<svg>
-<use href="./img/sprite.svg#icon-x-close" class="modal-close-icon"></use>
+<svg class="modal-close-icon">
+<use href="./img/sprite.svg#icon-x-close"></use>
 </svg>
 </button>
 <div class="img-container">
