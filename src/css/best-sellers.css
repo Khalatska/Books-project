@@ -185,6 +185,7 @@ margin-left: auto;
 
 .overlay-container{
   position: relative;
+  overflow: hidden;
 
 }
 
