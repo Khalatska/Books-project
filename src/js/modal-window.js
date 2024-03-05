@@ -84,7 +84,7 @@ function createModalWindow ({book_image,  title, author, description, buy_links,
 `<div class="modal"> 
  <button type="button" class="modal-close-btn">
 <svg class="modal-close-icon">
-<use href="./img/sprite.svg#icon-x-close-modal"></use>
+<use href="./img/sprite.svg#icon-close-modal"></use>
 </svg>
 </button>
 <div class="img-container">
