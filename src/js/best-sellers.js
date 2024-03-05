@@ -38,7 +38,10 @@ function createBooksCard (category){
 
 function createBookCard ({book_image, title, _id, author}){
     return ` <li class="best-book-item">
+    <div class="overlay-container"> 
     <img src="${book_image}" alt="${title}" data-id="${_id}" class="best-book-img" width="375" height="485"/>
+    <p class="overlay">Quick view</p>
+    </div>
     <h2 class="best-book-title">${sliceTitle(16, title)}</h2>
     <p class="best-book-author">${author}</p>
     </li>
@@ -65,7 +68,7 @@ async function handleSeeMore(e){
         <h2 class="selected-category-title">${targetTitle}</h2>
         <ul class="book-list-category">${markupBooks}</ul>
     `;
-    addListenerToCards();
+
     window.scrollTo({top: 0, behavior:'smooth'});
     const categoriesItems = document.querySelectorAll('.item-categories');
     categoriesItems.forEach(item =>{
@@ -82,14 +85,6 @@ async function handleSeeMore(e){
      return `${firstWords} <span class="accent-books">${lastWord}</span>`
     }
     
-
-
-
-// function addListenerToCards (){
-//     const galleryImg = document.querySelectorAll('.best-book-img');
-//     galleryImg.forEach( img => {img.addEventListener('click', onClickGalleryImg)});
-
-// }
 
 function addListenerToCards() {
     bestBooksContainer.addEventListener('click', function (event) {

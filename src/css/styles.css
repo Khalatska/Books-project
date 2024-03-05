@@ -4,6 +4,7 @@
 @import url('./best-sellers.css');
 @import url('./categories.css');
 @import url('./modal-window.css');
+@import url('./support-ukraine.css');
  
  
  body {
@@ -17,4 +18,21 @@
 	--violet: #4f2ee8;
 	--yellow: #eac645;
 	--white: #fff;
+}
+
+
+@media screen and (min-width: 768px){
+	.flex-container{
+	display: flex;
+}
+}
+
+@media screen and (min-width: 1440px){
+	.main-flex-container{
+		display: flex;
+	
+	}
+	.flex-container{
+		flex-direction: column;
+	}
 }

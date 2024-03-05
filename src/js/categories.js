@@ -51,6 +51,16 @@ function categoryTemplate ({list_name}){
 
   if(event.target && event.target.matches('li.item-categories')){
     let category = event.target.textContent;
+    if(category === 'All Categories'){
+        renderBestBooks();
+        const allCategoriesItems = document.querySelectorAll('.item-categories');
+   allCategoriesItems.forEach(category =>{
+    category.classList.remove('active')
+   });
+   event.target.classList.add('active');
+        return;
+    }
+    
     displayBooks(category);
 
    const allCategoriesItems = document.querySelectorAll('.item-categories');
@@ -58,10 +68,7 @@ function categoryTemplate ({list_name}){
     category.classList.remove('active')
    });
    event.target.classList.add('active');
-    if(category === 'All Categories'){
-        renderBestBooks();
-        return;
-    }
+     
   }
  });
 
@@ -70,12 +77,16 @@ function categoryTemplate ({list_name}){
  async function displayBooks(category){
 const bookListCategory = document.querySelector('.book-list-category');
 bookListCategory.innerHTML = '';
+
 const books = await getBooksByCategory(category);
 const booksMarkup = books.map(book =>{
-    return ` <li>
-    <img src="${book.book_image}" alt="${book.title}" data-id="${book._id}"/>
-    <h3>${book.title}</h3>
-    <p>${book.author}</p>
+    return ` <li class="selected-item-category">
+    <div class="overlay-container"> 
+    <img src="${book.book_image}" alt="${book.title}" data-id="${book._id}" class="selected-category-img-mob"/>
+    <p class="overlay">Quick view</p>
+    </div>
+    <h3 class="category-title">${sliceTitle(16, book.title)}</h3>
+    <p class="selected-category-text">${book.author}</p>
     </li>
     `
 }).join('');
@@ -90,3 +101,11 @@ const withoutLastWord = categorySplit.slice(0, -1);
  const firstWords = withoutLastWord.join(' ');
 titleCategory.insertAdjacentHTML('afterbegin', firstWords);
  }
+
+ function sliceTitle(length, title){
+    if(title.length> length){
+       return title.slice(0, length) + '...';
+    } else {
+        return title;
+    }
+}
