@@ -1,38 +1,37 @@
- 
 @import url('./reset.css');
 @import url('./header.css');
 @import url('./best-sellers.css');
 @import url('./categories.css');
 @import url('./modal-window.css');
 @import url('./support-ukraine.css');
- 
- 
- body {
-  font-family: "DM Sans", sans-serif;
- }
+@import url('./dark-theme.css');
+@import url('./shopping-list-header.css');
+@import url('./shopping.css');
 
-
- :root {
-	--black: #111;
-	--black-1: #202024;
-	--violet: #4f2ee8;
-	--yellow: #eac645;
-	--white: #fff;
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f6f6f6;
 }
 
-
-@media screen and (min-width: 768px){
-	.flex-container{
-	display: flex;
+:root {
+  --black: #111;
+  --black-1: #202024;
+  --violet: #4f2ee8;
+  --yellow: #eac645;
+  --white: #fff;
 }
+
+@media screen and (min-width: 768px) {
+  .flex-container {
+    display: flex;
+  }
 }
 
-@media screen and (min-width: 1440px){
-	.main-flex-container{
-		display: flex;
-	
-	}
-	.flex-container{
-		flex-direction: column;
-	}
+@media screen and (min-width: 1440px) {
+  .main-flex-container {
+    display: flex;
+  }
+  .flex-container {
+    flex-direction: column;
+  }
 }

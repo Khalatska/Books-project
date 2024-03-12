@@ -1,0 +1,156 @@
+.shop-list-section {
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.shopping-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.1875;
+  letter-spacing: -0.04em;
+  color: #111;
+  margin-top: 40px;
+  margin-bottom: 120px;
+}
+.shopping-title-accent {
+  color: #4f2ee8;
+}
+
+.container-empty-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-empty {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 244px;
+  text-align: center;
+}
+
+/*--------------Books--------------------------*/
+.shopped-books {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bought-book {
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+  padding: 14px;
+  width: 335px;
+  height: 170px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.img-bought-book {
+  border-radius: 8px;
+  width: 100px;
+  height: 142px;
+}
+
+.bought-book-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.125;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.bought-book-name {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.03em;
+  color: #b4afaf;
+  margin-bottom: 8px;
+}
+
+.bought-book-description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.04em;
+  color: #111;
+  max-width: 192px;
+  margin-bottom: 16px;
+}
+
+.bought-book-author {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+}
+
+.author-shop-links {
+  display: flex;
+  gap: 66px;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopping-shops {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-shop-icon {
+  width: 32px;
+  height: 11px;
+  filter: grayscale(100%);
+  padding-top: 4px;
+}
+.img-shop-icon-apple {
+  width: 16px;
+  height: 16px;
+  filter: grayscale(100%);
+}
+
+.img-shop-icon:hover,
+.img-shop-icon-apple:hover {
+  filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.btn-delete-book {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background-color: #4f2ee8;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.trash-icon {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+  stroke: #4f2ee8;
+}

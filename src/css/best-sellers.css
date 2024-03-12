@@ -1,202 +1,195 @@
-
-.best-books-container{
-    max-width: 375px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding-bottom: 80px;
+.best-books-container {
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  padding-bottom: 80px;
 }
 
-.best-sellers-title{
-font-weight: 700;
-font-size: 32px;
-line-height: 1.1875;
-letter-spacing: -0.04em;
-color: #111;
-margin-top: 40px;
-margin-bottom: 40px;
+.best-sellers-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.1875;
+  letter-spacing: -0.04em;
+  color: #111;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.accent-books{
+.accent-books {
   color: #4f2ee8;
 }
 
-.selected-category-accent{
-    color: #4F2EE8;
+.selected-category-accent {
+  color: #4f2ee8;
 }
 
-.best-sellers-books{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+.best-sellers-books {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.best-category-name{
-    font-weight: 400;
-font-size: 14px;
-line-height: 1.28571;
-letter-spacing: 0.03em;
-text-transform: uppercase;
-color: #b4afaf;
-margin-bottom: 18px;
+.best-category-name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #b4afaf;
+  margin-bottom: 18px;
 }
- 
-.btn-see-more{
-    font-weight: 700;
-font-size: 14px;
-line-height: 1.28571;
-letter-spacing: -0.01em;
-text-transform: uppercase;
-color: #111;
-border: 2px solid #4f2ee8;
-border-radius: 40px;
-padding: 28px 14px;
-width: 124px;
-height: 46px;
-cursor: pointer;
-display: flex;
-background-color: transparent;
-align-items: center;
-justify-content: center;
-transition: background-color 250ms ease-in-out;
-margin-top: 8px;
-margin-left: auto;
+
+.btn-see-more {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #111;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  padding: 28px 14px;
+  width: 124px;
+  height: 46px;
+  cursor: pointer;
+  display: flex;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms ease-in-out;
+  margin-top: 8px;
+  margin-left: auto;
 }
 
 .btn-see-more:hover,
-.btn-see-more:focus{
-    background-color: #4F2EE8;
+.btn-see-more:focus {
+  background-color: #4f2ee8;
 }
 
-
-.best-book-item{
-    display: none;
+.best-book-item {
+  display: none;
 }
 
-@media screen and (max-width: 768px){
-    .best-book-item:first-child{
-        display: block;
-    }
+@media screen and (max-width: 768px) {
+  .best-book-item:first-child {
+    display: block;
+  }
 }
 
-.best-book-list{
-     display: flex;
-     flex-direction: column;
-     gap: 40px;
+.best-book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-
-.best-book-img{
-    border-radius: 16px;
+.best-book-img {
+  border-radius: 16px;
 }
 
-.best-book-title{
+.best-book-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.125;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #111;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+.best-book-author {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+}
+
+@media screen and (min-width: 768px) {
+  .best-books-container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .best-sellers-title {
+    font-size: 48px;
+    line-height: 1.08333;
+    margin-top: 100px;
+  }
+
+  .best-book-list {
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .best-book-item:nth-child(-n + 3) {
+    display: block;
+  }
+
+  .best-book-item {
+    width: calc((100% - 50px) / 3);
+  }
+
+  .best-book-img {
+    width: 218px;
+    height: 316px;
+  }
+
+  .btn-see-more {
+    margin-top: 20px;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 1.125;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-    color: #111;
-    margin-top: 14px;
-    margin-bottom: 4px;
+  }
+  .overlay {
+    max-width: 218px;
+  }
 }
 
-.best-book-author{
-    font-style: italic;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16667;
-    letter-spacing: -0.04em;
-    color: #b4afaf;
+@media screen and (min-width: 1440px) {
+  .best-books-container {
+    max-width: 1044px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .best-book-list {
+    gap: 24px;
+  }
+  .best-book-item {
+    display: block;
+    width: calc((100% - 96px) / 5);
+  }
+
+  .best-book-img {
+    width: 180px;
+    height: 256px;
+  }
+
+  .best-sellers-title {
+    font-size: 48px;
+    line-height: 1.08333;
+    margin-top: 40px;
+  }
+
+  .btn-see-more {
+    margin-top: 32px;
+  }
+
+  .overlay {
+    width: 180px;
+  }
 }
-
-@media screen and (min-width: 768px){
-    .best-books-container{
-        max-width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-
-    .best-sellers-title{
-        font-size: 48px;
-        line-height: 1.08333;
-        margin-top: 100px;
-    }
-
-    .best-book-list{
-        flex-direction: row;
-        gap: 25px;
-    }
-
-    .best-book-item:nth-child(-n + 3){
-        display: block;
-    }
-
-    .best-book-item{
-        width: calc((100% - 50px) / 3);
-    }
-
-    .best-book-img{
-        width: 218px;
-        height: 316px;
-    }
-
-    .btn-see-more{
-        margin-top: 20px;
-    }
-    .overlay{
-        max-width: 218px;
-    }
-
-
-}
-
-@media screen and (min-width: 1440px){
-    .best-books-container{
-        max-width: 1044px;
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-
-    .best-book-list{
-        gap: 24px;
-    }
-    .best-book-item{
-        display: block;
-        width: calc((100% - 96px) / 5);
-    }
-
-    .best-book-img{
-        width: 180px;
-        height: 256px;
-    }
-
-    .best-sellers-title{
-        font-size: 48px;
-        line-height: 1.08333;
-        margin-top: 40px;
-    }
-
-    .btn-see-more{
-        margin-top: 32px;
-    }
-
-    .overlay{
-        width: 180px;
-    }
-}
-
 
 /*--------Overlay-----------*/
 
-.overlay-container{
+.overlay-container {
   position: relative;
   overflow: hidden;
-
 }
 
-.overlay{
+.overlay {
   position: absolute;
   bottom: 0;
   border-radius: 0 0 8px 8px;
@@ -204,7 +197,7 @@ margin-left: auto;
   height: 36px;
   background: #eac645;
   text-align: center;
-  padding: 8px ;
+  padding: 8px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
@@ -218,6 +211,6 @@ margin-left: auto;
 }
 
 .overlay-container:hover .overlay {
-    display: block;
-    transform: translateY(0%);
+  display: block;
+  transform: translateY(0%);
 }

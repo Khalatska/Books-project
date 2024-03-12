@@ -1,0 +1,54 @@
+.dark {
+  background: #202024;
+}
+
+.dark .header-container {
+  background: #111111;
+  border: 1.5px solid #fff;
+}
+.dark .icon-burger,
+.dark .modal-close-icon {
+  stroke: #fff;
+}
+
+.dark .icon-shopping-header,
+.dark .header-icon {
+  fill: #fff;
+}
+
+.dark .item-categories {
+  color: rgba(255, 255, 255, 0.6);
+}
+.dark .active {
+  color: #eac645;
+}
+
+.dark .best-sellers-title,
+.dark .best-book-title,
+.dark .btn-see-more,
+.dark .selected-category-title,
+.dark .category-title,
+.dark .title-modal,
+.dark .description-modal,
+.dark .addBtn,
+.dark .nav-item-link {
+  color: #fff;
+}
+.dark .modal {
+  background: #202024;
+  border: 2px solid #fff;
+}
+
+.dark .img-shop {
+  filter: brightness(0) invert(1);
+  transition: filter 250ms ease-in-out;
+}
+
+.dark .img-shop:hover,
+.dark .booksIconApple:hover {
+  filter: grayscale(80%) drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
+.dark .congratulation {
+  color: rgba(255, 255, 255, 0.5);
+}

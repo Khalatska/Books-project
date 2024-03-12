@@ -1,0 +1,26 @@
+.active-page {
+  border-radius: 36px;
+  padding: 7px 16px;
+  width: 156px;
+  height: 34px;
+  background: #eac645;
+  box-sizing: border-box;
+  color: black;
+  color: #111;
+}
+
+.active-shop {
+  fill: #111;
+}
+
+.mob-list-shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 183px;
+  gap: 16px;
+}
+.white {
+  color: #fff;
+}
