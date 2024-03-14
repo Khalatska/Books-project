@@ -12,8 +12,8 @@
     />
     
     <script type="module" crossorigin src="/Books-project/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/Books-project/assets/dark.-theme-96b5dd10.js">
-    <link rel="stylesheet" href="/Books-project/assets/dark-36ab59b2.css">
+    <link rel="modulepreload" crossorigin href="/Books-project/assets/dark.-theme-8293671c.js">
+    <link rel="stylesheet" href="/Books-project/assets/dark-db041593.css">
   </head>
   <body>
     <header>
@@ -30,7 +30,7 @@
     </a>
     <nav class="nav-list">
         <ul class="nav-menu-list"> 
-        <li class="nav-item-home"><a href="./index.html">Home</a></li>
+        <li class="nav-item-home shop-nav-item"><a href="./index.html">Home</a></li>
         <li class="nav-item-shop"><a class="nav-item-link active-page" href="./shopping-list.html">Shopping List <svg class="icon-shopping-header" width="24" height="24"><use href="/Books-project/assets/sprite-41d2f54b.svg#icon-uil_cart"></use></svg></a></li>
     </ul>
 </div>
@@ -77,8 +77,35 @@
 </header>
     </header>
     <main>
-      
-      <section class="shop-list-section">
+      <div class="support-shop-container">
+        <div class="support-container" style="display: none">
+  <div class="donate-table">
+    <div class="donate-header">
+      <h2 class="donate-title">Support Ukraine</h2>
+      <svg width="20" height="32" class="icon-tryzub">
+        <use href="/Books-project/assets/sprite-41d2f54b.svg#icon-tryzub" />
+      </svg>
+    </div>
+
+    <div class="donate-overflow">
+      <ul class="donate-list"></ul>
+    </div>
+
+    <button type="button" class="button-down">
+      <svg class="icon-arrow-down" width="22" height="22">
+        <use href="/Books-project/assets/sprite-41d2f54b.svg#icon-button-down" />
+      </svg>
+    </button>
+
+    <button type="button" class="button-up">
+      <svg class="icon-arrow-up" width="20" height="20">
+        <use href="/Books-project/assets/sprite-41d2f54b.svg#icon-button-up" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+        <section class="shop-list-section">
   <h1 class="shopping-title">
     Shopping <span class="shopping-title-accent"> List</span>
   </h1>
@@ -87,10 +114,17 @@
     <p class="text-empty">
       This page is empty, add some books and proceed to order.
     </p>
-    <img src="../img/shop-list-min.png" alt="Books" width="322" height="241" />
+    <img
+      src="../img/shop-list-min.png"
+      alt="Books"
+      width="265"
+      height="198"
+      class="img-books"
+    />
   </div>
 </section>
 
+      </div>
     </main>
     
   </body>
