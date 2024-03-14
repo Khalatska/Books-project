@@ -25,12 +25,16 @@ function renderShopList(storedBooks) {
             'Sorry, but this book does not have an accessible description. Try reading it on the website of one of the shops';
         }
         const maxDescriptionLength = isLargeScreen ? 300 : 86;
+        const maxTitleLength = isLargeScreen ? 40 : 16;
         return `<li class="bought-book">
         <div class="img-container-shopping"> 
     <img src="${book_image}" alt="${title}" class="img-bought-book"/> </div>
     <div class="description-container">
     <h2 class="bought-book-title">${sliceDescription(16, title)}</h2>
-    <p class="bought-book-name">${sliceDescription(16, list_name)}</p>
+    <p class="bought-book-name">${sliceDescription(
+      maxTitleLength,
+      list_name
+    )}</p>
     <p class="bought-book-description">${sliceDescription(
       maxDescriptionLength,
       description
@@ -58,7 +62,7 @@ function renderShopList(storedBooks) {
 
     <button type="button" data-id=${_id} class="btn-delete-book">
     <svg class="trash-icon">
-    <use href="./img/sprite.svg#icon-trash"></use></svg></button>
+    <use href="../img/sprite.svg#icon-trash"></use></svg></button>
  
     </li>`;
       }
