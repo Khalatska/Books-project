@@ -30,8 +30,18 @@ body {
 @media screen and (min-width: 1440px) {
   .main-flex-container {
     display: flex;
+    margin: 0 auto;
+    max-width: 1440px;
   }
   .flex-container {
     flex-direction: column;
   }
+}
+
+.support-shop-container {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding-left: 24px;
+  padding-right: 24px;
 }

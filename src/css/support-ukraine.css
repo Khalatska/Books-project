@@ -1,4 +1,4 @@
-.support-container{
+.support-container {
   width: 375px;
   padding-left: 20px;
   padding-right: 20px;
@@ -7,10 +7,9 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  
 }
 
-.donate-table{
+.donate-table {
   width: 335px;
   box-sizing: border-box;
   padding: 24px 40px;
@@ -23,7 +22,6 @@
   );
   height: 460px;
   margin-top: 40px;
-  
 }
 
 .donate-header {
@@ -128,13 +126,12 @@
   fill: var(--buttons-and-background-main);
 }
 
-
-@media screen and (min-width: 768px){
-  .donate-table{
+@media screen and (min-width: 768px) {
+  .donate-table {
     height: 474px;
   }
 
-  .support-container{
+  .support-container {
     padding-left: 0px;
     margin-left: 0;
     padding-right: 32px;
@@ -174,8 +171,7 @@
 
 @media screen and (min-width: 1440px) {
   .support-container {
-    margin-top: 36px;
+    margin-top: 24px;
     margin-bottom: 80px;
-
   }
 }

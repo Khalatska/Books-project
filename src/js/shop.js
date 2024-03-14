@@ -8,6 +8,7 @@ const storedBooks = JSON.parse(localStorage.getItem('shopping-list')) || [];
 shoppedBooks.insertAdjacentHTML('beforeend', renderShopList(storedBooks));
 
 function renderShopList(storedBooks) {
+  const isLargeScreen = window.innerWidth > 768;
   return storedBooks
     .map(
       ({
@@ -23,13 +24,17 @@ function renderShopList(storedBooks) {
           description =
             'Sorry, but this book does not have an accessible description. Try reading it on the website of one of the shops';
         }
+        const maxDescriptionLength = isLargeScreen ? 300 : 86;
         return `<li class="bought-book">
         <div class="img-container-shopping"> 
     <img src="${book_image}" alt="${title}" class="img-bought-book"/> </div>
     <div class="description-container">
-    <h2 class="bought-book-title">${title}</h2>
+    <h2 class="bought-book-title">${sliceDescription(16, title)}</h2>
     <p class="bought-book-name">${sliceDescription(16, list_name)}</p>
-    <p class="bought-book-description">${sliceDescription(100, description)}</p>
+    <p class="bought-book-description">${sliceDescription(
+      maxDescriptionLength,
+      description
+    )}</p>
     <div class="author-shop-links">
     <p class="bought-book-author">${sliceDescription(15, author)}</p>
     <ul class="shopping-shops">
@@ -92,7 +97,7 @@ updateBooks();
 function updateBooks() {
   const containerEmpty = document.querySelector('.container-empty-list');
   if (storedBooks.length === 0) {
-    containerEmpty.style.display = 'block';
+    containerEmpty.style.display = 'flex';
     shoppedBooks.style.display = 'none';
   } else {
     containerEmpty.style.display = 'none';

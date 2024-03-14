@@ -3,6 +3,7 @@
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
+  padding-bottom: 60px;
 }
 
 .shopping-title {
@@ -12,7 +13,7 @@
   letter-spacing: -0.04em;
   color: #111;
   margin-top: 40px;
-  margin-bottom: 120px;
+  margin-bottom: 40px;
 }
 .shopping-title-accent {
   color: #4f2ee8;
@@ -23,6 +24,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 120px;
 }
 
 .text-empty {
@@ -153,4 +155,91 @@
   height: 16px;
   fill: #fff;
   stroke: #4f2ee8;
+}
+
+@media screen and (min-width: 768px) {
+  .shop-list-section {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .shopping-title {
+    font-size: 48px;
+    line-height: 1.08333;
+  }
+
+  .container-empty-list {
+    margin-top: 140px;
+  }
+
+  .text-empty {
+    font-size: 18px;
+    line-height: 1.33333;
+    max-width: 349px;
+  }
+
+  .bought-book {
+    padding: 24px;
+    width: 704px;
+    height: 213px;
+    gap: 24px;
+  }
+  .img-bought-book {
+    width: 116px;
+    height: 165px;
+  }
+
+  .bought-book-name {
+    margin-bottom: 14px;
+  }
+  .bought-book-description {
+    margin-bottom: 48px;
+    min-width: 508px;
+  }
+  .bought-book-author {
+    margin-right: auto;
+  }
+  .img-books {
+    width: 322px;
+    height: 241px;
+  }
+
+  .shopping-shops {
+    gap: 16px;
+  }
+  .img-shop-icon {
+    width: 48px;
+    height: 15px;
+  }
+  .img-shop-icon-apple {
+    width: 28px;
+    height: 27px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .shop-list-section {
+    min-width: 1044px;
+    padding-right: 24px;
+    padding-left: 0;
+  }
+
+  .bought-book {
+    width: 996px;
+  }
+
+  .bought-book-description {
+    min-width: 808px;
+  }
+  .shopping-title {
+    margin-top: 58px;
+  }
+
+  .container-empty-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
