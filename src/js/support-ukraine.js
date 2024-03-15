@@ -101,9 +101,59 @@ listElem.insertAdjacentHTML('beforeend', generateFunds(foundations));
 
 //--------------------------------------------------
 
-btnDown.addEventListener('click', function () {
-  btnDown.style.display = 'none';
-  btnUp.style.display = 'block';
+// btnDown.addEventListener('click', function () {
+//   btnDown.style.display = 'none';
+//   btnUp.style.display = 'block';
+
+//   donateOverflow.scrollTo({
+//     top: 1000,
+//     behavior: 'smooth',
+//   });
+// });
+
+// btnUp.addEventListener('click', function () {
+//   btnUp.style.display = 'none';
+//   btnDown.style.display = 'block';
+
+//   donateOverflow.scrollTo({
+//     top: 0,
+//     behavior: 'smooth',
+//   });
+// });
+
+//----------------------------------------------------
+
+// const intersectionObserver = new IntersectionObserver(function (entries) {
+//   if (entries[0].intersectionRatio <= 1.1) {
+//     btnUp.style.display = 'none';
+//     btnDown.style.display = 'flex';
+//   }
+// });
+
+// const intersectionObserver1 = new IntersectionObserver(function (entries) {
+//   if (entries[0].intersectionRatio <= 1.1) {
+//     btnDown.style.display = 'none';
+//     btnUp.style.display = 'flex';
+//   }
+// });
+
+// intersectionObserver.observe(listElem.firstChild);
+// intersectionObserver1.observe(listElem.lastChild);
+
+let offset = 0;
+
+btnDown.addEventListener('click', async () => {
+  offset += 150;
+  if (offset > 170) {
+    offset = 0;
+  }
+
+  if (offset === 150) {
+    btnDown.classList.remove('scrolldown-open');
+    btnDown.classList.add('scrolldown-hidden');
+    btnUp.classList.remove('scrolldown-hidden');
+    btnUp.classList.add('scrolldown-open');
+  }
 
   donateOverflow.scrollTo({
     top: 1000,
@@ -111,31 +161,20 @@ btnDown.addEventListener('click', function () {
   });
 });
 
-btnUp.addEventListener('click', function () {
-  btnUp.style.display = 'none';
-  btnDown.style.display = 'block';
+btnUp.addEventListener('click', async () => {
+  offset += 150;
+  if (offset > 170) {
+    offset = 0;
+  }
 
+  if (offset === 0) {
+    btnUp.classList.remove('scrolldown-open');
+    btnUp.classList.add('scrolldown-hidden');
+    btnDown.classList.remove('scrolldown-hidden');
+    btnDown.classList.add('scrolldown-open');
+  }
   donateOverflow.scrollTo({
     top: 0,
     behavior: 'smooth',
   });
 });
-
-//----------------------------------------------------
-
-const intersectionObserver = new IntersectionObserver(function (entries) {
-  if (entries[0].intersectionRatio <= 1.1) {
-    btnUp.style.display = 'none';
-    btnDown.style.display = 'flex';
-  }
-});
-
-const intersectionObserver1 = new IntersectionObserver(function (entries) {
-  if (entries[0].intersectionRatio <= 1.1) {
-    btnDown.style.display = 'none';
-    btnUp.style.display = 'flex';
-  }
-});
-
-intersectionObserver.observe(listElem.firstChild);
-intersectionObserver1.observe(listElem.lastChild);

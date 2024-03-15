@@ -95,7 +95,7 @@
   border-radius: 50%;
   cursor: pointer;
   outline: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
@@ -115,7 +115,7 @@
   border-radius: 50%;
   cursor: pointer;
   outline: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
@@ -174,4 +174,18 @@
     margin-top: 24px;
     margin-bottom: 80px;
   }
+}
+
+.scrolldown-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  display: none;
+}
+
+.scrolldown-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  display: flex;
 }
