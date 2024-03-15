@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function toggleSupportContainer() {
     if (window.innerWidth > 1439) {
-      supportContainer.style.display = 'block';
+      supportContainer.style.display = 'flex';
     } else {
       supportContainer.style.display = 'none';
     }

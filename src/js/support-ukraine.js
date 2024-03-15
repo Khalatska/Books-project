@@ -126,14 +126,14 @@ btnUp.addEventListener('click', function () {
 const intersectionObserver = new IntersectionObserver(function (entries) {
   if (entries[0].intersectionRatio <= 1.1) {
     btnUp.style.display = 'none';
-    btnDown.style.display = 'block';
+    btnDown.style.display = 'flex';
   }
 });
 
 const intersectionObserver1 = new IntersectionObserver(function (entries) {
   if (entries[0].intersectionRatio <= 1.1) {
     btnDown.style.display = 'none';
-    btnUp.style.display = 'block';
+    btnUp.style.display = 'flex';
   }
 });
 
