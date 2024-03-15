@@ -7,7 +7,9 @@
   margin-bottom: 40px;
 }
 .header-container {
-  width: auto;
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0 auto;
   height: 64px;
   display: flex;
@@ -48,8 +50,7 @@
   align-items: center;
   justify-content: center;
   gap: 11px;
-  margin-left: auto;
-  margin-right: 8px;
+  margin-left: 144px;
 }
 
 /*------------------------Checkbox----------------------------*/
@@ -253,6 +254,10 @@
     width: 20px;
     height: 20px;
     fill: #111111;
+  }
+
+  .checkbox-btn {
+    margin-left: auto;
   }
 }
 
