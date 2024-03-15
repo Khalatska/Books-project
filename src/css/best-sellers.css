@@ -214,3 +214,6 @@
   display: block;
   transform: translateY(0%);
 }
+.best-book-item.display-five {
+  display: block;
+}

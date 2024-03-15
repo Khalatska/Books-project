@@ -78,6 +78,9 @@ async function handleSeeMore(e) {
         <ul class="book-list-category">${markupBooks}</ul>
     `;
 
+  const listFiveElem = document.querySelectorAll('.best-book-item ');
+  listFiveElem.forEach(elemList => elemList.classList.add('display-five'));
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
   const categoriesItems = document.querySelectorAll('.item-categories');
   categoriesItems.forEach(item => {
