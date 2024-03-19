@@ -64,7 +64,9 @@
 }
 .dark .bought-book-title,
 .dark .bought-book-description,
-.dark .shop-nav-item {
+.dark .shop-nav-item,
+.dark .btn-delete-book,
+.dark .modal-close-btn {
   color: #fff;
 }
 

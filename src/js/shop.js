@@ -54,9 +54,7 @@ function renderShopList(storedBooks) {
     </div>
     </div>
 
-    <button type="button" data-id=${_id} class="btn-delete-book">
-    <svg class="icon-burger">
-    <use href="../img/sprite.svg#icon-x-close"></use></svg></button>
+    <button type="button" data-id=${_id} class="btn-delete-book">X</button>
  
     </li>`;
       }

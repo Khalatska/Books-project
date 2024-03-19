@@ -81,10 +81,7 @@ function createModalWindow({
 
   const instance = basicLightbox.create(
     `<div class="modal"> 
- <button type="button" class="modal-close-btn">
-<svg class="icon-burger">
-<use href="./img/sprite.svg#icon-x-close"></use>
-</svg>
+ <button type="button" class="modal-close-btn">X
 </button>
 <div class="img-container">
 <div class="img-top-container"> 
