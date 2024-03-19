@@ -138,8 +138,8 @@
   position: absolute;
   width: 28px;
   height: 28px;
-  top: 14px;
-  right: 14px;
+  top: 8px;
+  right: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,7 +148,8 @@
   background-color: transparent;
   cursor: pointer;
   border-radius: 50%;
-  transition: 0.5s;
+  font-size: 14px;
+  color: #111;
 }
 
 @media screen and (min-width: 768px) {

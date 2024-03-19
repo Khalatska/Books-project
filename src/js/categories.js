@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bestBooksContainer.insertAdjacentHTML(
         'afterbegin',
         `
-          <h2 class="selected-category-title"> <span class="selected-category-accent"></span></h2>
+          <h1 class="selected-category-title"> <span class="selected-category-accent"></span></h1>
           <ul class="book-list-category"></ul>
         `
       );
@@ -61,14 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (category === 'All Categories') {
         fetchBooks();
         if (window.innerWidth < 768) {
-          window.scrollTo({ top: 4000, behavior: 'smooth' });
+          scrollTitleUp();
         }
       } else {
         displayBooks(category);
-      }
-
-      if (window.innerWidth < 768) {
-        window.scrollTo({ top: 4000, behavior: 'smooth' });
+        if (window.innerWidth < 768) {
+          scrollTitleUp();
+        }
       }
 
       document.querySelectorAll('.item-categories').forEach(category => {
@@ -121,4 +120,13 @@ function sliceTitle(length, title) {
   } else {
     return title;
   }
+}
+
+function scrollTitleUp() {
+  const mainTitle = document.querySelector('h1');
+  mainTitle.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+    inline: 'nearest',
+  });
 }
