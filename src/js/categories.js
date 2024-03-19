@@ -61,14 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (category === 'All Categories') {
         fetchBooks();
         if (window.innerWidth < 768) {
-          window.scrollTo({ top: 2000, behavior: 'smooth' });
+          window.scrollTo({ top: 4000, behavior: 'smooth' });
         }
       } else {
         displayBooks(category);
       }
 
       if (window.innerWidth < 768) {
-        window.scrollTo({ top: 2000, behavior: 'smooth' });
+        window.scrollTo({ top: 4000, behavior: 'smooth' });
       }
 
       document.querySelectorAll('.item-categories').forEach(category => {
