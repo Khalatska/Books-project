@@ -99,47 +99,6 @@ function generateFunds(foundations) {
 
 listElem.insertAdjacentHTML('beforeend', generateFunds(foundations));
 
-//--------------------------------------------------
-
-// btnDown.addEventListener('click', function () {
-//   btnDown.style.display = 'none';
-//   btnUp.style.display = 'block';
-
-//   donateOverflow.scrollTo({
-//     top: 1000,
-//     behavior: 'smooth',
-//   });
-// });
-
-// btnUp.addEventListener('click', function () {
-//   btnUp.style.display = 'none';
-//   btnDown.style.display = 'block';
-
-//   donateOverflow.scrollTo({
-//     top: 0,
-//     behavior: 'smooth',
-//   });
-// });
-
-//----------------------------------------------------
-
-// const intersectionObserver = new IntersectionObserver(function (entries) {
-//   if (entries[0].intersectionRatio <= 1.1) {
-//     btnUp.style.display = 'none';
-//     btnDown.style.display = 'flex';
-//   }
-// });
-
-// const intersectionObserver1 = new IntersectionObserver(function (entries) {
-//   if (entries[0].intersectionRatio <= 1.1) {
-//     btnDown.style.display = 'none';
-//     btnUp.style.display = 'flex';
-//   }
-// });
-
-// intersectionObserver.observe(listElem.firstChild);
-// intersectionObserver1.observe(listElem.lastChild);
-
 let offset = 0;
 
 btnDown.addEventListener('click', async () => {

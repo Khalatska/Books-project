@@ -6,10 +6,10 @@ const refs = {
 
 refs.closeMenuElem.addEventListener('click', () => {
   refs.modalMenuElem.classList.remove('is-visible');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'visible';
 });
 
 refs.openMenuElem.addEventListener('click', () => {
   refs.modalMenuElem.classList.add('is-visible');
-  document.body.style.overflow = 'visible';
+  document.body.style.overflow = 'hidden';
 });
