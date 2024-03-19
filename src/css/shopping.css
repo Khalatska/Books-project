@@ -145,16 +145,10 @@
   justify-content: center;
   padding: 0;
   border: none;
-  background-color: #4f2ee8;
+  background-color: transparent;
   cursor: pointer;
   border-radius: 50%;
-}
-
-.trash-icon {
-  width: 16px;
-  height: 16px;
-  fill: #fff;
-  stroke: #4f2ee8;
+  transition: 0.5s;
 }
 
 @media screen and (min-width: 768px) {

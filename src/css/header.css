@@ -29,6 +29,8 @@
 
 .icon-burger {
   stroke: #111111;
+  width: 18px;
+  height: 18px;
 }
 
 .btn-close-menu {

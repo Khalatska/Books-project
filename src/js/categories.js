@@ -1,10 +1,12 @@
 import { getCategoriesBooks } from './API';
 import { getBooksByCategory } from './API';
-import { renderBestBooks } from './best-sellers';
+import { fetchBooks } from './best-sellers';
 import { onClickGalleryImg } from './modal-window';
 const listCategories = document.querySelector('.list-categories');
 
 //Відмалювали категорії
+
+categoriesData();
 
 async function categoriesData() {
   try {
@@ -30,7 +32,6 @@ function categoriesTemplate(res) {
   const markup = res.map(categoryTemplate).join('');
   return markup;
 }
-categoriesData();
 
 //Виділяємо обрану категорію і робимо розмімтку для неї
 
@@ -38,41 +39,45 @@ const bestBooksContainer = document.querySelector('.best-books-container');
 const firstItemCategory = document.querySelector('.item-categories');
 firstItemCategory.classList.add('active');
 
-listCategories.addEventListener('click', event => {
-  bestBooksContainer.innerHTML = '';
-  bestBooksContainer.insertAdjacentHTML(
-    'afterbegin',
-    `
-    <h2 class="selected-category-title"> <span class="selected-category-accent"></span></h2>
-    <ul class="book-list-category"></ul>`
-  );
+document.addEventListener('DOMContentLoaded', () => {
+  if (listCategories) {
+    listCategories.addEventListener('click', event => {
+      const clickedCategory = event.target.closest('.item-categories');
+      if (!clickedCategory) return;
 
-  const bookListCategory = document.querySelector('.book-list-category');
-  bookListCategory.addEventListener('click', onClickGalleryImg);
+      bestBooksContainer.replaceChildren();
+      bestBooksContainer.insertAdjacentHTML(
+        'afterbegin',
+        `
+          <h2 class="selected-category-title"> <span class="selected-category-accent"></span></h2>
+          <ul class="book-list-category"></ul>
+        `
+      );
 
-  if (event.target && event.target.matches('li.item-categories')) {
-    let category = event.target.textContent;
-    if (category === 'All Categories') {
-      renderBestBooks();
-      const allCategoriesItems = document.querySelectorAll('.item-categories');
-      allCategoriesItems.forEach(category => {
+      const bookListCategory = document.querySelector('.book-list-category');
+      bookListCategory.addEventListener('click', onClickGalleryImg);
+
+      let category = clickedCategory.textContent.trim();
+      if (category === 'All Categories') {
+        fetchBooks();
+        if (window.innerWidth < 768) {
+          window.scrollTo({ top: 2000, behavior: 'smooth' });
+        }
+      } else {
+        displayBooks(category);
+      }
+
+      if (window.innerWidth < 768) {
+        window.scrollTo({ top: 2000, behavior: 'smooth' });
+      }
+
+      document.querySelectorAll('.item-categories').forEach(category => {
         category.classList.remove('active');
       });
-      event.target.classList.add('active');
-      return;
-    }
-
-    displayBooks(category);
-
-    if (window.innerWidth < 768) {
-      window.scrollTo({ top: 1000, behavior: 'smooth' });
-    }
-
-    const allCategoriesItems = document.querySelectorAll('.item-categories');
-    allCategoriesItems.forEach(category => {
-      category.classList.remove('active');
+      clickedCategory.classList.add('active');
     });
-    event.target.classList.add('active');
+  } else {
+    console.error('Element with id "categoryList" not found');
   }
 });
 

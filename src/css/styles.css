@@ -23,7 +23,12 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .flex-container {
+  /* .flex-container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 768px;
+  } */
+  .side-bar {
     display: flex;
     margin: 0 auto;
     max-width: 768px;
@@ -36,8 +41,9 @@ body {
     margin: 0 auto;
     max-width: 1440px;
   }
-  .flex-container {
-    flex-direction: column;
+  .side-bar {
+    display: block;
+    margin: 0;
   }
 }
 

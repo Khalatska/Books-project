@@ -4,10 +4,19 @@ import { onClickGalleryImg } from './modal-window';
 
 const bestBooksContainer = document.querySelector('.best-books-container');
 
-renderBestBooks();
+fetchBooks();
 addListenerToCards();
 
-export async function renderBestBooks() {
+export async function fetchBooks() {
+  try {
+    const result = await getTopBooks();
+    renderBestBooks(result);
+  } catch (error) {
+    console.log('Error with your API');
+  }
+}
+
+function renderBestBooks(result) {
   bestBooksContainer.insertAdjacentHTML(
     'afterbegin',
     `
@@ -17,24 +26,18 @@ export async function renderBestBooks() {
   );
   const bestBooksList = document.querySelector('.best-sellers-books');
 
-  try {
-    const result = await getTopBooks();
+  if (result.length === 0) {
+    bestBooksList.innerHTML = `<p>No popular books found</p>`;
+  } else {
+    result.forEach(book => {
+      const markup = createBooksCard(book);
+      bestBooksList.insertAdjacentHTML('beforeend', markup);
+    });
 
-    if (result.length === 0) {
-      bestBooksList.innerHTML = `<p>No popular books found</p>`;
-    } else {
-      result.forEach(book => {
-        const markup = createBooksCard(book);
-        bestBooksList.insertAdjacentHTML('beforeend', markup);
-      });
-
-      const btnSeeMore = document.querySelectorAll('.btn-see-more');
-      btnSeeMore.forEach(btn => {
-        btn.addEventListener('click', handleSeeMore);
-      });
-    }
-  } catch (error) {
-    console.error('Error fetching top books:', error);
+    const btnSeeMore = document.querySelectorAll('.btn-see-more');
+    btnSeeMore.forEach(btn => {
+      btn.addEventListener('click', handleSeeMore);
+    });
   }
 }
 

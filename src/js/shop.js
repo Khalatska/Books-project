@@ -19,11 +19,13 @@ function renderShopList(storedBooks) {
         author,
         buy_links,
         _id,
+        amazon_product_url,
       }) => {
         if (!description) {
           description =
             'Sorry, but this book does not have an accessible description. Try reading it on the website of one of the shops';
         }
+        const appleLink = buy_links[1] ? buy_links[1].url : '';
         const maxDescriptionLength = isLargeScreen ? 300 : 86;
         const maxTitleLength = isLargeScreen ? 40 : 16;
         return `<li class="bought-book">
@@ -43,26 +45,18 @@ function renderShopList(storedBooks) {
     <p class="bought-book-author">${sliceDescription(15, author)}</p>
     <ul class="shopping-shops">
       <li> 
-    <a href="${
-      buy_links.filter(({ name }) => {
-        return name === 'Amazon';
-      }).url
-    }" target="_blanket" class="shopping-shops-link"><img src="${amazon}" alt="Amazon" class="img-shop-icon"/></a>
+    <a href="${amazon_product_url}" target="_blanket" class="shopping-shops-link"><img src="${amazon}" alt="Amazon" class="img-shop-icon"/></a>
     </li>
     <li> 
-    <a href="${
-      buy_links.filter(({ name }) => {
-        return name === 'Apple';
-      }).url
-    }" target="_blank" class="shopping-shops-link"><img src="${apple}" alt="Apple Books" class="img-shop-icon-apple"/></a>
+    <a href="${appleLink}" target="_blank" class="shopping-shops-link"><img src="${apple}" alt="Apple Books" class="img-shop-icon-apple"/></a>
     </li>
     </ul>
     </div>
     </div>
 
     <button type="button" data-id=${_id} class="btn-delete-book">
-    <svg class="trash-icon">
-    <use href="../img/sprite.svg#icon-trash"></use></svg></button>
+    <svg class="icon-burger">
+    <use href="../img/sprite.svg#icon-x-close"></use></svg></button>
  
     </li>`;
       }
